@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/hello/<number>', methods=['GET', 'POST'])
+@app.route('/get/ner/<number>', methods=['GET', 'POST'])
 def welcome(number):
     output_dir=Path("/home/pradeva/Documents/NER-API/MODEL")
 

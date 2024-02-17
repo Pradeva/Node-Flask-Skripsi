@@ -46,7 +46,7 @@ app.post('/add-account', function (req, res) {
 
 //LOGIN
 app.get('/login', function (req, res) {
-    const param = req.query
+    const param = req.body
     const Username = param.Username
     const Password = param.Password
 
@@ -212,6 +212,7 @@ app.get('/master/NL/list/:data_id', function (req, res) {
     })
 })
 
+//DELETE NATURAL LANGUAGE
 app.post('/master/NL/delete/:NL_id', function (req, res) {
     const param = req.params
     const NL_id = param.NL_id
@@ -248,12 +249,9 @@ app.post('/master/NL/delete/:NL_id', function (req, res) {
     })
 })
 
-//DELETE NATURAL LANGUAGE
-
-
 app.listen(port, host, () => {
     console.log(`Server berjalan di http://${host}:${port}`);
-  });
+});
 
 // GET
 // app.get('/get-mahasiswa', function (req, res) {

@@ -28,7 +28,7 @@ def NaturalLanguage():
 
         # Simpan hasil ke dalam tabel MySQL
         cursor = mysql.connection.cursor()
-        cursor.execute("INSERT INTO natural_language (data_id, `condition`, action) values (%s, %s, %s)",
+        cursor.execute("INSERT INTO natural_language (data_id, kondisi, aksi) values (%s, %s, %s)",
                        (id_data, con, act))
         mysql.connection.commit()
         cursor.close()
@@ -45,10 +45,10 @@ def NaturalLanguage():
 @app.route('/get/ner', methods=['GET', 'POST'])
 def NlpToNer():
     try:
-        nl_id = request.json['nl_id']
+        # nl_id = request.json['nl_id']
         con = request.json['condition']
 
-        output_dir = Path(r"C:\Users\prade\OneDrive\Documents\Materi Kuliah\Sitasi Proposal\FINAL PROPOSAL\Node-Flask-Api\MODEL")
+        output_dir = Path(r"C:\Users\prade\OneDrive\Documents\Materi Kuliah\Sitasi Proposal\FINAL PROPOSAL\Api\Node-Flask-Api\MODEL")
 
         nlp = spacy.load(output_dir)
 

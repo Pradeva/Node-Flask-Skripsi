@@ -82,8 +82,10 @@ for data_row in TABLE_DATA_2[1:]:
         pdf.cell(col_widths_2[i], 10, str(datum), 1)
     pdf.ln()
 
-output_dir = Path(r"C:\Users\prade\OneDrive\Documents\Materi Kuliah\Sitasi Proposal\FINAL PROPOSAL\Node-Flask-Api\RESULT")
+output_dir = Path(r"C:\Users\prade\OneDrive\Documents\Materi Kuliah\Sitasi Proposal\FINAL PROPOSAL\Api\Node-Flask-Api\RESULT")
 
-pdf.output(output_dir / 'tables.pdf')
+
+
+pdf.output(output_dir / 'tables3.pdf')
 
 # C:\Users\prade\OneDrive\Documents\Materi Kuliah\Sitasi Proposal\FINAL PROPOSAL\Node-Flask-Api\RESULT

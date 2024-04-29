@@ -2,6 +2,7 @@ kalimat = "apple lebih dari 10 dan kuas lebih dari 3"
 kata_cari = "apple"
 
 posisi_awal = kalimat.find(kata_cari)
+print(kalimat[0:7])
 
 if posisi_awal != -1:
     panjang_kata = len(kata_cari)

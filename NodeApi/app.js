@@ -45,7 +45,7 @@ app.post('/add-account', function (req, res) {
 })
 
 //LOGIN
-app.get('/login', function (req, res) {
+app.post('/login', function (req, res) {
     const param = req.body
     const Username = param.Username
     const Password = param.Password
@@ -243,6 +243,35 @@ app.post('/master/NL/delete/:NL_id', function (req, res) {
             res.status(200).json({
                 "success": true,
                 "message": "Sukses hapus data",
+                "data": results
+            })
+        }
+    })
+})
+
+app.post('/master/NL/add', function (req, res) {
+    const param = req.body
+    const id_data = param.id_data
+    const condition = param.condition
+    const action = param.action
+
+
+    const queryStr = "INSERT INTO natural_language (data_id, kondisi, aksi) VALUES (?, ?, ?)"
+
+    const values = [id_data, condition, action] // Panggil encryptedPassword sebagai fungsi
+
+    conn.query(queryStr, values, (err, results) => {
+        if (err) {
+            console.log(err)
+            res.status(500).json({
+                "success": false,
+                "message": err.sqlMessage,
+                "data": null
+            })
+        } else {
+            res.status(200).json({
+                "success": true,
+                "message": "Sukses menyimpan data",
                 "data": results
             })
         }
